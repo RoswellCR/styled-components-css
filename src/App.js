@@ -18,6 +18,7 @@ ${getLinearGradient('50deg')}
 text-align: center;
 padding:0.3em;
 margin:0.3em;
+
 ${borderGeneral}
 h1 { 
   color: blue;
@@ -26,6 +27,11 @@ h1 {
   color: black;
   font-size: 30px;
 }
+transition: opacity 350ms ease-out;
+&:hover{
+  opacity:0.6;
+}
+
 ` 
 
 const Subtitle = styled.h1`
