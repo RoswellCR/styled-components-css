@@ -22,6 +22,10 @@ ${borderGeneral}
 h1 { 
   color: blue;
 }
+.big{
+  color: black;
+  font-size: 30px;
+}
 ` 
 
 const Subtitle = styled.h1`
@@ -35,7 +39,7 @@ function App() {
           <Header>
           
            <h1>Styled component</h1>
-
+            <h2 className='big'>Example</h2>
           </Header>
           <Subtitle>
             Title example
