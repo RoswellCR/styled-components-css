@@ -36,37 +36,11 @@ transition: opacity 350ms ease-out;
 &:hover{
   opacity:0.6;
 }
+@media(max-width:700px){
+background: #000;
+}
 ` 
 
-const Button = styled.button`
-padding: 0.9em;
-background-color:${(props)=>props.bg || 'black'};
-border-radius: 0.6em;
-color: #fff;
-border: 0;
-margin: 5px;
-`
-
-const ButtonSpecial = styled(Button)`
-color: gray;
-transition: all 300ms ease-out;
-
-&:hover{
-  transform: scale(1.3)
-}
-`
-const Subtitle = styled.h1`
-color: ${colorPrincipal};
-`
-
-const Input = styled.input.attrs((props)=>({
-  placeholder : props.placeholder || 'Non Obligatory field',
-  type: props.type || 'text'
-
-}))`
-padding: 1em;
-border: 1px solid blue;
-`
 
 function App() {
   return (
@@ -78,13 +52,7 @@ function App() {
            <h1>Styled component</h1>
             <h2 className='big'>Example</h2>
           </Header>
-          <Subtitle>
-            Title example
-          </Subtitle>
-          <Input placeholder='add personal data'/>
-          <Button>Boton 1 </Button>
-          <Button bg='orangered'>Boton 1 </Button>
-          <ButtonSpecial> Another button</ButtonSpecial>
+          
         </div>
     
   );
