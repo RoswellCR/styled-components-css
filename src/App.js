@@ -40,7 +40,14 @@ color: #fff;
 border: 0;
 margin: 5px;
 `
+const ButtonSpecial = styled(Button)`
+color: gray;
+transition: all 300ms ease-out;
 
+&:hover{
+  transform: scale(1.3)
+}
+`
 const Subtitle = styled.h1`
 color: ${colorPrincipal};
 `
@@ -59,6 +66,7 @@ function App() {
           </Subtitle>
           <Button>Boton 1 </Button>
           <Button bg='orangered'>Boton 1 </Button>
+          <ButtonSpecial> Another button</ButtonSpecial>
         </div>
     
   );
