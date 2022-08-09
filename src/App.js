@@ -16,6 +16,12 @@ const getLinearGradient = (rot)=>{
   return `background:linear-gradient(${rot},#db7093,#daa357);`
 }
 
+const sizes = {
+  mobile: '375px',
+  tablet: '768px',
+  desktop: '1024px'
+}
+
 const Header = styled.header 
 //background: var(--colorPrincipal);
 `background:${colorPrincipal};
@@ -36,9 +42,16 @@ transition: opacity 350ms ease-out;
 &:hover{
   opacity:0.6;
 }
-@media(max-width:700px){
-background: #000;
+@media(min-width:${sizes.mobile}){
+ background: #000;
 }
+@media(min-width:${sizes.tablet}){
+  background: blue;
+  color: #fff
+  }
+@media(max-width:${sizes.desktop}){
+  background: yellow;
+  }
 ` 
 
 
