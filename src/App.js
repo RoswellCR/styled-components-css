@@ -31,8 +31,15 @@ transition: opacity 350ms ease-out;
 &:hover{
   opacity:0.6;
 }
-
 ` 
+const Button = styled.button`
+padding: 0.9em;
+background-color:${(props)=>props.bg || 'black'};
+border-radius: 0.6em;
+color: #fff;
+border: 0;
+margin: 5px;
+`
 
 const Subtitle = styled.h1`
 color: ${colorPrincipal};
@@ -50,6 +57,8 @@ function App() {
           <Subtitle>
             Title example
           </Subtitle>
+          <Button>Boton 1 </Button>
+          <Button bg='orangered'>Boton 1 </Button>
         </div>
     
   );
