@@ -1,7 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
 import './styles.css';
 import {colorPrincipal} from './colors'
+
+const GlobalStyle = createGlobalStyle`
+body { ${ props => props.font };
+  }
+`
 
 //variables completas
 const borderGeneral = 'border-radius:0.9em;'
@@ -32,6 +37,7 @@ transition: opacity 350ms ease-out;
   opacity:0.6;
 }
 ` 
+
 const Button = styled.button`
 padding: 0.9em;
 background-color:${(props)=>props.bg || 'black'};
@@ -40,6 +46,7 @@ color: #fff;
 border: 0;
 margin: 5px;
 `
+
 const ButtonSpecial = styled(Button)`
 color: gray;
 transition: all 300ms ease-out;
@@ -52,10 +59,20 @@ const Subtitle = styled.h1`
 color: ${colorPrincipal};
 `
 
+const Input = styled.input.attrs((props)=>({
+  placeholder : props.placeholder || 'Non Obligatory field',
+  type: props.type || 'text'
+
+}))`
+padding: 1em;
+border: 1px solid blue;
+`
+
 function App() {
   return (
     
         <div>
+          <GlobalStyle font='font-family : cursive'/>
           <Header>
           
            <h1>Styled component</h1>
@@ -64,6 +81,7 @@ function App() {
           <Subtitle>
             Title example
           </Subtitle>
+          <Input placeholder='add personal data'/>
           <Button>Boton 1 </Button>
           <Button bg='orangered'>Boton 1 </Button>
           <ButtonSpecial> Another button</ButtonSpecial>
