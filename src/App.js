@@ -19,6 +19,9 @@ text-align: center;
 padding:0.3em;
 margin:0.3em;
 ${borderGeneral}
+h1 { 
+  color: blue;
+}
 ` 
 
 const Subtitle = styled.h1`
