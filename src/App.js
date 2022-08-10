@@ -1,45 +1,27 @@
 import React from 'react';
-import styled,{css} from 'styled-components';
+import styled,{keyframes} from 'styled-components';
 import './styles.css';
 import {colorPrincipal} from './colors'
 
 
-
-//variables completas
-const borderGeneral = 'border-radius:0.9em;'
-
-//variables dinamicas con funciones
-const getLinearGradient = (rot)=>{
-  return `background:linear-gradient(${rot},#db7093,#daa357);`
+const Anima = keyframes`  
+from {
+  background: #000;
 }
-
+to {
+  background: #db7093;
+}
+`
 
 const Header = styled.header 
 //background: var(--colorPrincipal);
 `background:${colorPrincipal};
-${getLinearGradient('50deg')}
 text-align: center;
 padding:0.3em;
 margin:0.3em;
+animation: ${Anima} 2ms ease-in-out infinite;
+`
 
-${borderGeneral}
-h1 { 
-  color: blue;
-}
-` 
-const baseStyles = css`
-padding: 1em 2em;
-margin: 1em;
-border: 2px solid black;
-border: ${(props)=>`2px solid ${props.borderColor}`}
-`
-const Button = styled.button`
-${baseStyles}
-`
-const GreenButton= styled.button`
-${baseStyles}
-border:2px solid green;
-`
 
 function App() {
   return (
@@ -52,8 +34,6 @@ function App() {
             
           </Header>
           
-          <Button> Dispara </Button>
-          <Button borderColor='red'> Shoot </Button>
         </div>
     
   );
